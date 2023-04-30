@@ -1,4 +1,20 @@
-# Elaborar un programa que recorra una lista con los nombres de 10 de sus futuros usuarios de tu aplicación (pueden ser personas, pacientes, organizaciones sociales o instituciones públicas).
+# Elaborar un programa que recorra una lista con los nombres de 10 de sus futuros
+# usuarios de tu aplicación (pueden ser personas, pacientes, organizaciones 
+#sociales o instituciones públicas).
+
+usuarios = [
+    "Juan",
+    "Diego",
+    "Pablo",
+    "Sara",
+    "Pedro",
+    "Tamara",
+    "Carlos",
+    "Aurora",
+    "Ramiro",
+    "Rosa"
+]
+print(len(usuarios))
 
 # Mediante una función, a todos los usuarios se les creará una cuenta automáticamente.
 
