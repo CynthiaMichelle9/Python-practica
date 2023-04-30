@@ -20,12 +20,27 @@ print(len(users_names_list))
 # Mediante una función, a todos los usuarios se les creará una cuenta automáticamente.
 # Asigne una contraseña para cada cuenta. La contraseña debe ser creada con random 
 # y debe cumplir con los siguientes criterios: mayúsculas, minúsculas y números.
+# Cada cuenta debe guardarse en una nueva variable con su respectiva contraseña.
+
 def create_users(users):
     users_dictionary = dict()
     for user in users:
         users_dictionary[user] = {
             "password": random_pass()
         }
+
+    # Por cada cuenta debe pedir un número telefónico para contactarse.
+    # El programa no terminará de preguntar por los números hasta que todas las organizaciones tengan un número de contacto asignado.
+    # El programa debe verificar que el número telefónico tenga 8 dígitos numéricos.
+    for user in users:
+        while True:
+            user_phone = input("Ingresar número telefónico para usuario " + user + ": ")
+            if len(user_phone) == 8 and user_phone.isnumeric():
+                users_dictionary[user]["phone_number"] = user_phone
+                break
+            else:
+                print("Formato inválido, ingrese 8 dígitos")
+
     return users_dictionary
 
 lower_character = string.ascii_lowercase
@@ -51,12 +66,8 @@ def random_pass():
 
 print(create_users(users_names_list))
 
-# Cada cuenta debe guardarse en una nueva variable con su respectiva contraseña.
 
-# Por cada cuenta debe pedir un número telefónico para contactarse.
 
-# El programa no terminará de preguntar por los números hasta que todas las organizaciones tengan un número de contacto asignado.
 
-#El programa debe verificar que el número telefónico tenga 8 dígitos numéricos.
 
 #Se debe guardar como un string
