@@ -31,11 +31,12 @@ def create_users(users):
 
     # Por cada cuenta debe pedir un número telefónico para contactarse.
     # El programa no terminará de preguntar por los números hasta que todas las organizaciones tengan un número de contacto asignado.
-    # El programa debe verificar que el número telefónico tenga 8 dígitos numéricos.
     for user in users:
         while True:
             user_phone = input("Ingresar número telefónico para usuario " + user + ": ")
+            # El programa debe verificar que el número telefónico tenga 8 dígitos numéricos.
             if len(user_phone) == 8 and user_phone.isnumeric():
+                # Se debe guardar como un string
                 users_dictionary[user]["phone_number"] = user_phone
                 break
             else:
@@ -65,9 +66,3 @@ def random_pass():
     return password
 
 print(create_users(users_names_list))
-
-
-
-
-
-#Se debe guardar como un string
