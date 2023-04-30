@@ -1,3 +1,5 @@
+import string
+import random
 # Elaborar un programa que recorra una lista con los nombres de 10 de sus futuros
 # usuarios de tu aplicación (pueden ser personas, pacientes, organizaciones 
 #sociales o instituciones públicas).
@@ -22,9 +24,31 @@ def create_users(users):
     users_dictionary = dict()
     for user in users:
         users_dictionary[user] = {
-            "password": ""
+            "password": random_pass()
         }
     return users_dictionary
+
+lower_character = string.ascii_lowercase
+upper_character = string.ascii_uppercase
+numbers_character = string.digits
+
+def random_pass():
+    password = ""
+    lower_part = ""
+    upper_part = ""
+    number_part = ""
+    
+    for _ in range(random.randint(5, 15)):
+        lower_part = lower_part + random.choice(lower_character)
+    
+    for _ in range(random.randint(1, 5)):
+        upper_part = upper_part + random.choice(upper_character)
+    
+    for _ in range(random.randint(3, 5)):
+        number_part = number_part + random.choice(numbers_character)
+    password = lower_part + upper_part + number_part
+    return password
+
 print(create_users(users_names_list))
 
 # Cada cuenta debe guardarse en una nueva variable con su respectiva contraseña.
